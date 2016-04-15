@@ -1,0 +1,23 @@
+{
+  "name": "tiles-visualisation",
+  "version": "1.0.0",
+  "description": "some visualisation kit",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/Daneczech/tiles-visualisation.git"
+  },
+  "author": "Dan Dvoracek",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/Daneczech/tiles-visualisation#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7"
+  }
+}

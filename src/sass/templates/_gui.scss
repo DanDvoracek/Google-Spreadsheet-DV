@@ -1,0 +1,167 @@
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #181818;
+}
+
+header {
+	height: 90px;
+	background-color: #262626;
+
+	.wrap {
+		@include container;
+	}
+
+	h1 {
+		@include span(7);
+		color: whitesmoke;
+		@include font-regular;
+		line-height: 90px;
+		font-size: 24px;
+
+		span {
+			@include font-contrast;
+			color: #FFA037;
+		}
+	}
+
+	.filters {
+		width: 200px;
+		float: right;
+		border: 1px solid rgba(255,255,255, 0.1);
+		height: 50px;
+		margin-top: 20px;
+		line-height: 50px;
+		text-align: center;
+		color: white;
+		@include font-regular;
+		cursor: pointer;
+		transition: border 0.2s;
+
+		&:hover {
+			border: 1px solid rgba(255,255,255, 0.2);
+			transition: border 0.2s;
+		}
+
+		span {
+			display: block;
+			background-color: #FFA037;
+			box-sizing: border-box;
+			visibility: hidden;
+			opacity: 0;
+			transition: visibility 0.2s, opacity 0.2s;
+
+			&:hover {
+				background-color: #ea8f2e;
+			}
+
+			&.open {
+				visibility: visible;
+				opacity: 1;
+				transition: visibility 0.2s, opacity 0.2s;
+			}
+		}
+	}
+}
+
+#container {
+	@include container;
+	margin-top: 120px;
+}
+
+.tiles {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	float: left;
+	box-sizing: border-box;
+	background: lemonchiffon;
+	overflow: visible;
+	border: 1px solid #181818;
+	min-width: span(6);
+	height: 80px;
+	@include susy-breakpoint(760px, 12){
+		min-width: span(3);
+	}
+	@include susy-breakpoint(1025px, 12){
+		min-width: span(1);
+	}
+
+	p {
+		@include font-contrast;
+		color: white;
+		width: 100%;
+		vertical-align: middle;
+		font-size: 18px;
+		text-align: center;
+		align-self: center;
+	}
+
+	.tiles-info {
+		display: flex;
+		position: absolute;
+		visibility: hidden;
+		width: 100%;
+		height: 200%;
+		top: -130%;
+		left: 0%;
+		border-radius: 10px;
+		background: #FFA037;
+		z-index: 2000;
+		flex-direction: column;
+		justify-content: center;
+		@include susy-breakpoint(1025px, 12){
+			width: 200%;
+			height: 200%;
+			top: -130%;
+			left: -50%;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 12px 10px 0 10px;
+			border-color: #FFA037 transparent transparent transparent;
+			bottom: -11px;
+			left: 44%;
+		}
+
+		span {
+			display: block;
+			clear: both;
+			width: 100%;
+			font-size: 10px;
+			color: white;
+			text-align: center;
+			align-self: center;
+			padding: 0 5px;
+			font-family: 'Arial', sans-serif;
+
+			&.barname {
+				font-size: 16px;
+				@include font-regular;
+			}
+			&.dredeemed {
+				font-size: 32px;
+				line-height: 50px;
+				@include font-contrast;
+				@include font-regular;
+			}
+			&.redemptions {
+				font-size: 12px;
+			}
+			&.postcode {
+				font-size: 14px;
+				@include font-regular;
+				margin-top: 5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiles-viz</title>
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round|Fugaz+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script type="text/javascript" src="bower_components/handlebars/handlebars.min.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="wrap">
+        <h1>Google spreadsheets: <span>data visualisation</span></h1>
+        <div class="filters">
+            Filters
+            <span id="red-asc">Redemptions ASC</span>
+            <span id="red-desc">Redemptions DESC</span>
+        </div>
+    </div>
+</header>
+
+<div id="container">
+
+</div>
+
+<script id="tile-template" type="text/x-handlebars-template">
+
+    <div class="tiles" style="background-color:{{bar.colour}};">
+        <p>{{ bar.drinksredeemed }}</p>
+        <div class="tiles-info">
+            <span class="barname">{{ bar.barname }}</span>
+            <span class="dredeemed">{{ bar.drinksredeemed }}</span>
+            <span class="redemptions">redemptions</span>
+            <span class="postcode">{{ bar.postcode.v }}, {{ bar.city.v }}</span>
+        </div>
+    </div>
+
+</script>
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js" type="text/javascript"></script>-->
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script type="text/javascript" src="public/js/main.js"></script>
+
+</body>
+</html>
